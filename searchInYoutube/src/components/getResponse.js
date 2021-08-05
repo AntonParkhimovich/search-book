@@ -14,6 +14,7 @@ let  responseStringId =''
             .then(data=>data.data.items.map((item, index) =>{
                response.data.items[index].statistics = item.statistics
             }))
+            responseStringId =''
             return response
         })
         

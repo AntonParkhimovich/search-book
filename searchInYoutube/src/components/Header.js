@@ -12,11 +12,12 @@ const Header = (porps)=>{
     }
     const clickHandler=()=>{
         getResponce(video, createData)
+        setVideo('')
     }
     return(
         <>  
             <header className ={'header'}>
-            <input type={'text'} placeholder={'Enter Video name'} onChange={changeHandler}/>
+            <input type={'text'} placeholder={'Enter Video name'} onChange={changeHandler} value={video}/>
             <button className = {'btn btn-search'} onClick={clickHandler}>Search Video</button>
             </header>
         </>

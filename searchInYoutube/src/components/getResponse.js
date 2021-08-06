@@ -1,7 +1,6 @@
 import axios from 'axios'
 import lodash from 'lodash'
 let  responseStringId =''
-
  export const getResponce = (video, setStore) =>{
      if (video !== ''){
         axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyBKFVnu-NyTs5mvtsWq0qN8cwrLI-AOFAA&type=video&part=snippet&maxResults=100&q=${video}`)
@@ -11,16 +10,12 @@ let  responseStringId =''
             responseStringId = `${item.id.videoId}`: 
             responseStringId = `${responseStringId},${item.id.videoId}`})
             axios.get(`https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBKFVnu-NyTs5mvtsWq0qN8cwrLI-AOFAA&id=${responseStringId}&part=statistics`)
-            .then(data=>data.data.items.map((item, index) =>{
+            .then(data =>{ data.data.items.map((item, index) =>{
                response.data.items[index].statistics = item.statistics
-            }))
+            })
             responseStringId =''
-            return response
+            setStore(lodash.chunk(response.data.items, 5)) 
         })
-        
-         
-      .then(response=> {setStore(lodash.chunk(response.data.items, 5))})
-         
+        })
      }
-    
 }

@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
-import ReactDOM from "react-dom";
-import {BrowserRouter as Router, Switch, Route, Link, useHistory, useLocation} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 const Footer =(props)=>{
     let {videos} = props
     let history = useHistory()
@@ -18,15 +17,13 @@ const Footer =(props)=>{
     }
     return(
         <>
-        
-        <footer className={'footer'}>
+        {videos.length === undefined? null : <footer className={'footer'}>
             <button onClick={clickHandler} className = {'btn'}id ={'back'}>Back</button>
-            {videos.map((item, index) =>{
+            { videos.map((item, index) =>{
                 return <Link className={'nav-link'} to={`\page${index+1}`} key={index+1}>{index+1}</Link>
             })}
             <button onClick={clickHandler} className={'btn'} id= {'next'}>Next</button>
-        </footer>
-        
+        </footer>}
         </>
     )
 }

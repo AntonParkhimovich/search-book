@@ -5,10 +5,25 @@
     justify-content: space-around;
 }
 .video-card{
-    background-color: wheat;
+    background-color: #c00;
     width: 295px;
     height: 477px;
+    font-size: 14px;
+    font-family:'Roboto', sans-serif;
+    color: white;
 }
-.video-card__image{
-    width: 100%;
+
+.statistics{
+    list-style-type: none;
+}
+.statistics-items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.video-card__title{
+    height: 124px;
+}
+.video-card__chanell{
+    font-size: 16px;
 }

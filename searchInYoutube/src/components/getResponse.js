@@ -3,7 +3,7 @@ import lodash from 'lodash'
 let  responseStringId =''
  export const getResponce = (video, setStore) =>{
      if (video !== ''){
-        axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyBKFVnu-NyTs5mvtsWq0qN8cwrLI-AOFAA&type=video&part=snippet&maxResults=100&q=${video}`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyBKFVnu-NyTs5mvtsWq0qN8cwrLI-AOFAA&type=video&part=snippet&maxResults=50&q=${video}`)
         .then(response => {
             response.data.items.map((item, index) =>{
             index===0 ? 

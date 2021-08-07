@@ -1,0 +1,14 @@
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+}
+.video-card{
+    background-color: wheat;
+    width: 295px;
+    height: 477px;
+}
+.video-card__image{
+    width: 100%;
+}

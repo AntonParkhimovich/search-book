@@ -19,7 +19,7 @@ const Header = (porps)=>{
     }
     return(
         <>  
-            <header className ={'header'}>
+            <header className ={`${history.location.pathname}` ==='/'? 'header active':'header'}>
             <input type={'text'} placeholder={'Enter Video name'} onChange={changeHandler} value={video}/>
             <button className = {'btn btn-search'} onClick={clickHandler}>Search Video</button>
             </header>

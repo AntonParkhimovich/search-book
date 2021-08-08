@@ -23,11 +23,11 @@ const Footer =(props)=>{
         <>
         <FlipInY>
         {videos.length === undefined? null : <footer className={'footer'}>
-            <button onClick={clickHandler} className = {'btn'}id ={'back'}>Back</button>
+            <button onClick={clickHandler} className = {'btn btn-footer'}id ={'back'}>Back</button>
             { videos.map((item, index) =>{
                 return <NavLink activeClassName='nav-link__active' className={'nav-link'} to={`\page${index+1}`} key={index+1}>{index+1}</NavLink>
             })}
-            <button onClick={clickHandler} className={'btn'} id= {'next'}>Next</button>
+            <button onClick={clickHandler} className={'btn btn-footer'} id= {'next'}>Next</button>
         </footer>}
         </FlipInY>
         </>

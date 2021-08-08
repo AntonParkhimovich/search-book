@@ -9,13 +9,12 @@ import { Link, useRouteMatch } from 'react-router-dom';
 
 export const VideoCard=(props)=>{
     let { path, url } = useRouteMatch()
-   
     let {video}= props
     console.log(video);
     return(
     <div className ={'video-card'}>
         <div className={'video-card__header'}>
-        <Link className ={`link-video`} to={`${url}/${video.id.videoId}`} ><PlayCircleFilledIcon className={classes.root}></PlayCircleFilledIcon></Link>
+        <Link className ={`link-video`} to={`${url}/${video.id.videoId}`} ><PlayCircleFilledIcon></PlayCircleFilledIcon></Link>
         
         </div>
         <div className={'video-card__main'}>

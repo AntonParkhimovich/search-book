@@ -3,9 +3,11 @@ import '../styles/btn.scss'
 import {connect} from 'react-redux'
 import { createData } from '../redux/actions'
 import { getResponce } from './getResponse'
+import { useHistory } from 'react-router-dom'
 
 const Header = (porps)=>{
     let {setVideo, video, createData}=porps
+    const history = useHistory()
     const changeHandler=(event)=>{
         let {value}=event.target
         setVideo(value)
@@ -13,6 +15,7 @@ const Header = (porps)=>{
     const clickHandler=()=>{
         getResponce(video, createData)
         setVideo('')
+        history.push('/page1')
     }
     return(
         <>  

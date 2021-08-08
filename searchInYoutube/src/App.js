@@ -17,9 +17,17 @@ function App() {
   
   return (
     <>
-   <Header setVideo={setVideo} video={video}/>
-   <Main/>
-   <Footer/>
+    <Router>
+    <Header setVideo={setVideo} video={video}/>
+    <Switch>
+    <Route path="/:id">
+          <Main/>
+          <Footer/>
+          </Route>
+    </Switch>
+    </Router>
+
+   
    </>
   );
 }

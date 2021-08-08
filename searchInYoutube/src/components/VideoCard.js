@@ -14,7 +14,9 @@ export const VideoCard=(props)=>{
     return(
     <div className ={'video-card'}>
         <div className={'video-card__header'}>
-        <Link className ={`link-video`} to={`${url}/${video.id.videoId}`} ><PlayCircleFilledIcon></PlayCircleFilledIcon></Link>
+        <Link className ={`link-video`} to={`${url}/${video.id.videoId}`}>
+            <img src={video.snippet.thumbnails.medium.url} className ={'video-image'}/>
+        </Link>
         
         </div>
         <div className={'video-card__main'}>
@@ -33,4 +35,3 @@ export const VideoCard=(props)=>{
     ) 
 }
 
-{/* <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${video.id.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen='1'></iframe> */}

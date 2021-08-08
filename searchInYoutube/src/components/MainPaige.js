@@ -15,7 +15,7 @@ const FadeIn = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
                <VideoCard video={item} key={index}/>
                <Switch>
                <Route path={`${path}/${item.id.videoId}`}>
-                     <Video video={item}/>
+                     <Video video={item} key={index}/>
                 </Route>
                </Switch>
         </FadeIn>    

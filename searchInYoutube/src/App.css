@@ -1,4 +1,5 @@
-body{
-    background: url(./styles/pexels-steve-johnson-1044989.jpg)no-repeat, center;
-    background-size: cover;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }

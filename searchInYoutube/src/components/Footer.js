@@ -1,6 +1,10 @@
 import { connect } from "react-redux";
 import React from "react";
-import {Link, useHistory} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
+import '../styles/footer.scss'
+import { flipInY} from 'react-animations'
+import styled, { keyframes } from 'styled-components';
+const FlipInY = styled.div`animation: 1s ${keyframes`${flipInY}`}`;
 const Footer =(props)=>{
     let {videos} = props
     let history = useHistory()
@@ -17,13 +21,15 @@ const Footer =(props)=>{
     }
     return(
         <>
+        <FlipInY>
         {videos.length === undefined? null : <footer className={'footer'}>
             <button onClick={clickHandler} className = {'btn'}id ={'back'}>Back</button>
             { videos.map((item, index) =>{
-                return <Link className={'nav-link'} to={`\page${index+1}`} key={index+1}>{index+1}</Link>
+                return <NavLink activeClassName='nav-link__active' className={'nav-link'} to={`\page${index+1}`} key={index+1}>{index+1}</NavLink>
             })}
             <button onClick={clickHandler} className={'btn'} id= {'next'}>Next</button>
         </footer>}
+        </FlipInY>
         </>
     )
 }

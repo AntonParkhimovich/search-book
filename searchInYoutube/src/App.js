@@ -2,8 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom"
 import { useState } from 'react';
 import Header from './components/Header';
@@ -13,7 +12,6 @@ import Footer from './components/Footer';
 
 function App() {
   const[video, setVideo] = useState('')
-
   
   return (
     <>

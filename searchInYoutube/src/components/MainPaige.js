@@ -6,7 +6,7 @@ import Video from "./Video";
 const FadeIn = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
  export const MainPaige = (props)=>{
      const {videos} = props
-     let { path, url } = useRouteMatch()
+     let { path } = useRouteMatch()
     return(
         <>
        {videos.map((item, index)=>{

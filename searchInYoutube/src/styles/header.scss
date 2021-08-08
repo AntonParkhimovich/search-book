@@ -4,8 +4,14 @@
     align-items: stretch;
     justify-content: center;
     margin-bottom: 3vh;
+    transition-property: all;
+    transition-duration: .5s;
 }
 .btn-search{
     width: 120px;
     height: 40px;
+}
+.active{
+    position: absolute;
+    top: 45vh;
 }

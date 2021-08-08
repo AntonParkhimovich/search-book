@@ -4,17 +4,12 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import CommentIcon from '@material-ui/icons/Comment';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
-import { makeStyles } from '@material-ui/styles';
+
 import { Link, useRouteMatch } from 'react-router-dom';
-const useStyles = makeStyles({
-    root: {
-     width:'100px',
-     height: '100px'
-    },
-  });
+
 export const VideoCard=(props)=>{
     let { path, url } = useRouteMatch()
-    const classes = useStyles();
+   
     let {video}= props
     console.log(video);
     return(

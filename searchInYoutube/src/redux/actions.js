@@ -1,8 +1,8 @@
-import { CREATE_VIDEO_DATA } from "./types"
+import { CREATE_VIDEO_DATA } from "./types";
 
-export const createData = (data)=>{
-    return{
-        type:CREATE_VIDEO_DATA,
-        payload:data
-    }
-}
+export const createData = (data) => {
+  return {
+    type: CREATE_VIDEO_DATA,
+    payload: data,
+  };
+};

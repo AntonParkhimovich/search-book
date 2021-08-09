@@ -10,7 +10,7 @@
 ---
 
 ## DEMO
-You can see this project at the link: https://antonparkhimovich.github.io/searchInYouTube/
+[Wath demo](https://antonparkhimovich.github.io/searchInYouTube/)
 ---
 ## Project description
 ---

@@ -1,20 +1,29 @@
 import "../styles/header.scss";
 import "../styles/btn.scss";
 import { connect } from "react-redux";
-import { createData } from "../redux/actions";
+import {
+  createData,
+  createResponseItem,
+  createVideoPath,
+  createOnLoad
+} from "../redux/actions";
 import { getResponce } from "./getResponse";
 import { useHistory } from "react-router-dom";
+import { Params } from "./getParamResponse";
 
 const Header = (porps) => {
-  let { setVideo, video, createData } = porps;
+  let { createData, createResponseItem, responseData, createVideoPath, createOnLoad} = porps;
+  let { searchItem } = responseData;
+
   const history = useHistory();
   const changeHandler = (event) => {
     let { value } = event.target;
-    setVideo(value);
+    createResponseItem(value);
   };
   const clickHandler = () => {
-    getResponce(video, createData);
-    setVideo("");
+    const params = new Params(searchItem);
+    getResponce(params, createData, createOnLoad, responseData);
+    createVideoPath("/page1");
     history.push("/page1");
   };
   return (
@@ -28,7 +37,7 @@ const Header = (porps) => {
           type={"text"}
           placeholder={"Enter Video name"}
           onChange={changeHandler}
-          value={video}
+          value={searchItem}
         />
         <button className={"btn btn-search"} onClick={clickHandler}>
           Search Video
@@ -39,5 +48,11 @@ const Header = (porps) => {
 };
 const mapDispatchToProps = {
   createData,
+  createResponseItem,
+  createVideoPath,
+  createOnLoad
 };
-export default connect(null, mapDispatchToProps)(Header);
+const mapStateToProps = (state) => {
+  return state;
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

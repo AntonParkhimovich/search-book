@@ -1,22 +1,21 @@
 import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
-import { MainPaige } from "./MainPaige";
+import Footer from "./Footer";
+import  MainPaige  from "./MainPaige";
 const Main = (props) => {
-  const { videos } = props;
+  const { videos, responseData } = props;
+  console.log(videos);
   return (
     <>
       <Switch>
-        <main className={"main"}>
-          {videos.length === undefined
-            ? null
-            : videos.map((item, index) => {
-                return (
-                  <Route path={`/page${index + 1}`} key={index}>
-                    <MainPaige videos={item} key={index} />
-                  </Route>
-                );
-              })}
-        </main>
+        <Route path={`${responseData.path}`}>
+           <main className={"main"}>
+           {videos === undefined ? null :
+            <MainPaige/>
+           }
+          </main>
+          <Footer />
+        </Route>
       </Switch>
     </>
   );

@@ -5,14 +5,20 @@ import {
   createData,
   createResponseItem,
   createVideoPath,
-  createOnLoad
+  createOnLoad,
 } from "../redux/actions";
 import { getResponce } from "./getResponse";
 import { useHistory } from "react-router-dom";
 import { Params } from "./getParamResponse";
 
 const Header = (porps) => {
-  let { createData, createResponseItem, responseData, createVideoPath, createOnLoad} = porps;
+  let {
+    createData,
+    createResponseItem,
+    responseData,
+    createVideoPath,
+    createOnLoad,
+  } = porps;
   let { searchItem } = responseData;
 
   const history = useHistory();
@@ -50,7 +56,7 @@ const mapDispatchToProps = {
   createData,
   createResponseItem,
   createVideoPath,
-  createOnLoad
+  createOnLoad,
 };
 const mapStateToProps = (state) => {
   return state;

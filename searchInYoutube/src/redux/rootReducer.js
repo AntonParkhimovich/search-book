@@ -4,5 +4,5 @@ import { responceDataReducer } from "./responseDataReduser";
 
 export const rootReducer = combineReducers({
   videos: videosDataReducer,
-  responseData: responceDataReducer
+  responseData: responceDataReducer,
 });

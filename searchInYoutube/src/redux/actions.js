@@ -1,8 +1,8 @@
 import { CREATE_VIDEO_DATA } from "./types";
 import { CREATE_VIDEO_RESPONCE_ITEM } from "./types";
-import { CREATE_ONLOAD} from "./types";
+import { CREATE_ONLOAD } from "./types";
 
-import{CREATE_VIDEO_PATH} from "./types"
+import { CREATE_VIDEO_PATH } from "./types";
 
 export const createData = (data) => {
   return {
@@ -18,11 +18,10 @@ export const createResponseItem = (item) => {
 };
 export const createOnLoad = (token) => {
   return {
-    type:CREATE_ONLOAD,
+    type: CREATE_ONLOAD,
     payload: token,
   };
 };
-
 
 export const createVideoPath = (path) => {
   return {

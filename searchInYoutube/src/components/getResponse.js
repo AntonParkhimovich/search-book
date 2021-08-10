@@ -1,12 +1,11 @@
 import axios from "axios";
-import lodash from "lodash";
 let responseStringId = "";
 export const getResponce = (params, setStore, createOnLoad, responseData) => {
-
   const { video } = params;
   if (video !== "") {
-    createOnLoad(!responseData.onLoad)
-    axios.get(
+    createOnLoad(!responseData.onLoad);
+    axios
+      .get(
         `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAG6gzoda68B9RJXJTtIZW3o0yuQZZ5DqI&type=video&part=snippet&maxResults=5&`,
         { params }
       )
@@ -15,6 +14,7 @@ export const getResponce = (params, setStore, createOnLoad, responseData) => {
           index === 0
             ? (responseStringId = `${item.id.videoId}`)
             : (responseStringId = `${responseStringId},${item.id.videoId}`);
+          return null;
         });
         return response;
       })
@@ -30,9 +30,8 @@ export const getResponce = (params, setStore, createOnLoad, responseData) => {
             });
             responseStringId = "";
             setStore(response.data);
-            createOnLoad(false)
+            createOnLoad(false);
           });
       });
-     
   }
 };
